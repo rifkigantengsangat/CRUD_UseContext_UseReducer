@@ -32,6 +32,7 @@ const addData = async(e)=>{
     const response = await axios.post('https://jsonplaceholder.typicode.com/posts',form)
     dispatch({type:'ADD_DATA',payload:response.data})
     console.log(response.data)
+    
     // navigate('/dan')    
 
 }

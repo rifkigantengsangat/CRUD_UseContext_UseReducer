@@ -7,7 +7,8 @@ export const DataProvider = ({children})=>{
         data: [],
         loading: false,
         error: null,
-        count :0
+        count :0,
+        cart : [],
 
     
     }
@@ -70,7 +71,12 @@ export const DataProvider = ({children})=>{
                     ...state,
                     data:state.data.filter(post => post.id !== action.payload)
                    }
+                   case 'CHART':
+                    return{
+                    ...state,
+                    cart: [...state.cart,{...action.payload,qty: 1}]
 
+                    }
                 default : return state
      
         }

@@ -5,6 +5,7 @@ import axios from 'axios'
 
 const Edit = () => {
     const [form,setForm] = useState({
+      
         title:'',
         body:''
     })
@@ -17,6 +18,7 @@ const Edit = () => {
     const UpdateDataById=async (e)=>{
         e.preventDefault()
        const response =  await axios.put(`https://jsonplaceholder.typicode.com/posts/${id}`,{
+             
             title:form.title,
             body:form.body
 
